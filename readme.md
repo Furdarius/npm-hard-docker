@@ -5,4 +5,4 @@ Heavy Docker image with stable verison of npm package manager and additional too
 ### How?
 
 * Pull it: `docker pull furdarius/npm-hard-docker`
-* Use it: `docker run -v $(pwd):/app furdarius/npm-hard-docker npm install`
+* Use it: `docker run -v $(pwd):/app furdarius/npm-hard-docker install`
