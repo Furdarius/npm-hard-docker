@@ -19,4 +19,5 @@ VOLUME ["/app"]
 WORKDIR /app
 
 # Define default command.
-CMD ["bash"]
+ENTRYPOINT ["npm"]
+CMD ["install"]
