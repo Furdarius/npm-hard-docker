@@ -1,18 +1,19 @@
 # Npm Docker Container with python and build tools (make, gcc, ...)
 # Base Dockerfile: furdarius/npm-docker
-FROM furdarius/npm-docker
+FROM furdarius/npm-docker:alpine
 
 MAINTAINER furdarius <getlag@yandex.com>
 
 # Packages
-RUN apt-get update && apt-get install -y \
-	build-essential \
-	software-properties-common \
+RUN apk add --no-cache \
+    build-base \
     python \
     python-dev \
-    python-pip \
-    python-virtualenv && \
-	rm -rf /var/lib/apt/lists/*
+    py-pip \
+ && pip install --upgrade pip \
+ && pip install virtualenv \
+ && update-ca-certificates \
+ && rm -rf /var/cache/apk/*
 
 # Set up the application directory
 VOLUME ["/app"]
