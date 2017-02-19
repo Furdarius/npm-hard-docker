@@ -6,6 +6,7 @@ MAINTAINER furdarius <getlag@yandex.com>
 
 # Packages
 RUN apk add --no-cache \
+    autoconf \
     build-base \
     python \
     python-dev \
