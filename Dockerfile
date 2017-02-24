@@ -1,18 +1,12 @@
-# Npm Docker Container with python and build tools (make, gcc, ...)
-# Base Dockerfile: furdarius/npm-docker
 FROM furdarius/npm-docker:alpine
-
 MAINTAINER furdarius <getlag@yandex.com>
 
 # Packages
 RUN apk add --no-cache \
     autoconf \
+    automake \
     build-base \
-    python \
-    python-dev \
-    py-pip \
- && pip install --upgrade pip \
- && pip install virtualenv \
+    nasm \
  && update-ca-certificates \
  && rm -rf /var/cache/apk/*
 
